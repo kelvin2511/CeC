@@ -45,6 +45,9 @@ if($_POST){
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="assets/css/Login.css" />
+
+     <!--Icono-->
+     <link rel="shortcut icon" href="assets/images/Logo de empresa/CeC.png" />
   
 
   <!-- Fontawesome -->

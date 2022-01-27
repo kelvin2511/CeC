@@ -13,7 +13,12 @@ foreach($lisenpleado as $empleado) {
    $imagen=$empleado['imagen'];
    $cargo=$empleado['cargo'];
 }
- 
+
+$sentenciaSQL = $conexion -> prepare("SELECT * FROM listado");
+$sentenciaSQL -> execute();
+$listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
+
+
 
 if(!isset($_SESSION['usuario'])){
   header("Location:../Login.php");
@@ -69,7 +74,7 @@ if($_SESSION['usuario']=="ok"){
          <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                <ul id="iq-sidebar-toggle" class="iq-menu">
-                  <li><a href="../../index.php" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Ver sitio web</span></a></li>
+                  <li><a href="../../../CeC/index.html" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Ver sitio web</span></a></li>
                   <li class="active active-menu"><a href="index.php" class="iq-waves-effect"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a></li>                  
                   
                   <li>

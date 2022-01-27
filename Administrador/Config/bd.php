@@ -1,7 +1,7 @@
 <?php 
 
 $host="localhost";
-$bd="cybernet";
+$bd="cec-online";
 $usuario="root";
 $contrasenia="";
 

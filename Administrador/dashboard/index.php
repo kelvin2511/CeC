@@ -525,130 +525,43 @@
                   <!--End Opcionador -->
                                  
                   <?php }?>
+
                   <!--Lista de listados-->
                   <div class="iq-card">
                      <div class="iq-card-header d-flex justify-content-between align-items-center">
                         <div class="iq-header-title">
-                           <h4 class="card-title">Top Rated Item </h4>
+                           <h4 class="card-title">Listado creados </h4>
                         </div>
                         <div id="top-rated-item-slick-arrow" class="slick-aerrow-block "></div>
                      </div>
+
                      <div class="iq-card-body">
                         <ul class="list-unstyled row top-rated-item mb-0">
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
+
+                       <?php foreach($listado as $lis) { ?>
+                           <li class="col-sm-6 col-lg-4 col-xl-7 iq-rated-box">
                               <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
+                                 <div class="iq-card-body p-">
                                     <div class="iq-thumb">
                                        <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/01.jpg" class="img-fluid w-100 img-border-radius" alt="">
+                                          <img src="../assets/images/Listado/Registro2.png" width="220" height="140" class="  img-border-radius" alt="">
                                        </a>
                                     </div>
                                     <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">The Last Breath</h6>
-                                       <p class="mb-0 mt-2">T.v show</p>
+                                       <h6 class="font-weight-600 mb-0">Nombre</h6>
+                                       <p class="mb-0 mt-2">Fecha</p>
                                        <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 134</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 30 k</p>
+                                       
+                                      
+                                       <button type="button" class="btn btn-danger btn-lg"><i class="ri-radio-button-fill"></i>Seleccionar Listado</button>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </li>
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
-                              <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/02.jpg" class="img-fluid w-100 img-border-radius" alt="">
-                                       </a>
-                                    </div>
-                                    <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">Last Night</h6>
-                                       <p class="mb-0 mt-2">Movie</p>
-                                       <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 133</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 20 k</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
-                              <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/03.jpg" class="img-fluid w-100 img-border-radius" alt="">
-                                       </a>
-                                    </div>
-                                    <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">Jeon Woochie</h6>
-                                       <p class="mb-0 mt-2">Movie</p>
-                                       <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 222</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 40 k</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
-                              <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/04.jpg" class="img-fluid w-100 img-border-radius" alt="">
-                                       </a>
-                                    </div>
-                                    <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">Dino Land</h6>
-                                       <p class="mb-0 mt-2">T.v show</p>
-                                       <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 122</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 25 k</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
-                              <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/05.jpg" class="img-fluid w-100 img-border-radius" alt="">
-                                       </a>
-                                    </div>
-                                    <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">Last Race</h6>
-                                       <p class="mb-0 mt-2">T.v show</p>
-                                       <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 144</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 35 k</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
-                              <div class="iq-card mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <a href="javascript:void(0)">
-                                          <img src="../assets/images/dashboard/06.jpg" class="img-fluid w-100 img-border-radius" alt="">
-                                       </a>
-                                    </div>
-                                    <div class="iq-feature-list">
-                                       <h6 class="font-weight-600 mb-0">Opend Dead Shot</h6>
-                                       <p class="mb-0 mt-2">T.v show</p>
-                                       <div class="d-flex align-items-center my-2 iq-ltr-direction">
-                                          <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 134</p>
-                                          <p class="mb-0 "><i class="las la-download ml-2"></i> 30 k</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
+                           </li> 
+
+                           <?php }?>
+                         
                         </ul>
                      </div>
                   </div>
