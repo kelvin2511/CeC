@@ -14,11 +14,6 @@ foreach($lisenpleado as $empleado) {
    $cargo=$empleado['cargo'];
 }
 
-$sentenciaSQL = $conexion -> prepare("SELECT * FROM listado");
-$sentenciaSQL -> execute();
-$listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
-
-
 
 if(!isset($_SESSION['usuario'])){
   header("Location:../Login.php");

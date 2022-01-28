@@ -1,5 +1,18 @@
 <?php include 'Template/Cabecerar.php';?> 
+<?php $sentenciaSQL = $conexion -> prepare("SELECT * FROM listado");
+$sentenciaSQL -> execute();
+$listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
 
+foreach($listado as $lista) { 
+
+   $idlista=$lista['ID'];
+   $nombrelista=$lista['nombre'];
+   $fechalista=$lista['fecha'];
+   $referencia=$lista['referencia'];
+  
+}
+
+ ?>
       <!-- Page Content  -->
       <div id="content-page" class="content-page">
          <div class="container-fluid">
