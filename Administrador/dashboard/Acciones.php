@@ -1,10 +1,11 @@
 
 <?php
 
+
+
 // Receptor de listados creados
 $txtID=(isset($_POST['txtID']))?$_POST['txtID']:"";
 $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
-$txtFecha=(isset($_FILES['txtFecha']['name']))?$_FILES['txtFecha']['name']:"";
 $Accion=(isset($_POST['Accion']))?$_POST['Accion']:"";
 
 // Receptor de Reportes creados
@@ -18,22 +19,23 @@ include("../Config/bd.php");
 // Acciones del listado
 switch($Accion){
     case "Crear";
-        $sentenciaSQL = $conexion -> prepare(" CREATE TABLE '$txtNombre'(
-            ID VARCHAR(6) PRIMARY KEY,
-            fecha DATE,
-            hora TIME,
-            nombre VARCHAR(255),
-            comunicacion VARCHAR(255),
-            situacion VARCHAR(255),
-            solucion VARCHAR(255),
-            estatus VARCHAR(255),
-            atendido VARCHAR(255),
-            )");     
-        $sentenciaSQL-> execute();  
-
+        // $sentenciaSQL = $conexion -> prepare(" CREATE TABLE '$txtNombre'(
+        //     ID VARCHAR(6) PRIMARY KEY,
+        //     fecha DATE,
+        //     hora TIME,
+        //     nombre VARCHAR(255),
+        //     comunicacion VARCHAR(255),
+        //     situacion VARCHAR(255),
+        //     solucion VARCHAR(255),
+        //     estatus VARCHAR(255),
+        //     atendido VARCHAR(255),
+        //     )");     
+     
+        $fecha = new DateTime();
+        
         $sentenciaSQL = $conexion -> prepare("INSERT INTO  listado (nombre,fecha ) VALUES (:nombre, :fecha);");
         $sentenciaSQL->bindParam(':nombre', $txtNombre);
-        $sentenciaSQL->bindParam(':fecha', $txtFecha);
+        $sentenciaSQL->bindParam(':fecha', $fecha);
         $sentenciaSQL-> execute();   
 
         // header("Location:Documentos.php");
