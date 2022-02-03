@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 12:56 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 31-01-2022 a las 06:23:02
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cec-online`
+-- Base de datos: `cec-online`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empleados`
+-- Estructura de tabla para la tabla `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -50,7 +50,7 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `empleados`
+-- Volcado de datos para la tabla `empleados`
 --
 
 INSERT INTO `empleados` (`id`, `nombre`, `user`, `contra`, `imagen`, `edad`, `cargo`, `pais`, `direccion`, `correo`, `twitter`, `facebook`, `instagram`, `linkeddin`, `compania`, `telefono`, `permiso`, `estado`, `Acercade`) VALUES
@@ -61,31 +61,147 @@ INSERT INTO `empleados` (`id`, `nombre`, `user`, `contra`, `imagen`, `edad`, `ca
 -- --------------------------------------------------------
 
 --
--- Table structure for table `listado`
+-- Estructura de tabla para la tabla `listado`
 --
 
 CREATE TABLE `listado` (
   `ID` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `fecha` date NOT NULL,
-  `referecia` varchar(500) NOT NULL
+  `fecha` varchar(255) NOT NULL,
+  `hora` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `listado`
+-- Volcado de datos para la tabla `listado`
 --
 
-INSERT INTO `listado` (`ID`, `nombre`, `fecha`, `referecia`) VALUES
-(1, 'dfs', '2022-01-12', 'sdf'),
-(2, 'sad', '2022-01-12', 'adsas'),
-(3, 'fdhg', '2022-01-15', 'fdgdfsgh'),
-(4, 'fds', '2022-01-14', 'sdaf'),
-(5, 'dfg', '2022-01-06', 'dfs');
+INSERT INTO `listado` (`ID`, `nombre`, `fecha`, `hora`) VALUES
+(24, 'prueba', '31-01-2022', '02:11:36'),
+(25, 'prueba2', '31-01-2022', '02:11:44'),
+(26, 'prueba3', '31-01-2022', '02:11:55'),
+(27, 'prueba4', '31-01-2022', '02:12:05'),
+(28, 'prueba5', '31-01-2022', '02:12:31'),
+(29, 'pruebai', '31-01-2022', '06:02:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reporte`
+-- Estructura de tabla para la tabla `prueba`
+--
+
+CREATE TABLE `prueba` (
+  `ID` varchar(10000) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prueba`
+--
+
+INSERT INTO `prueba` (`ID`, `fecha`, `hora`, `nombre`, `comunicacion`, `situacion`, `solucion`, `estatus`, `atendido`) VALUES
+('20-EISM-1-013', 'HOY', 'HOY', 'Kelvin Antigua', '1', 'Seleccion y retiro', 'NO se', '1', 'kelvin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prueba2`
+--
+
+CREATE TABLE `prueba2` (
+  `ID` int(11) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prueba3`
+--
+
+CREATE TABLE `prueba3` (
+  `ID` int(11) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prueba4`
+--
+
+CREATE TABLE `prueba4` (
+  `ID` int(11) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prueba5`
+--
+
+CREATE TABLE `prueba5` (
+  `ID` int(11) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pruebai`
+--
+
+CREATE TABLE `pruebai` (
+  `ID` int(255) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `comunicacion` varchar(255) DEFAULT NULL,
+  `situacion` varchar(255) DEFAULT NULL,
+  `solucion` varchar(255) DEFAULT NULL,
+  `estatus` varchar(255) DEFAULT NULL,
+  `atendido` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reporte`
 --
 
 CREATE TABLE `reporte` (
@@ -96,45 +212,99 @@ CREATE TABLE `reporte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `empleados`
+-- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `listado`
+-- Indices de la tabla `listado`
 --
 ALTER TABLE `listado`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `reporte`
+-- Indices de la tabla `prueba2`
+--
+ALTER TABLE `prueba2`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `prueba3`
+--
+ALTER TABLE `prueba3`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `prueba4`
+--
+ALTER TABLE `prueba4`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `prueba5`
+--
+ALTER TABLE `prueba5`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `pruebai`
+--
+ALTER TABLE `pruebai`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `reporte`
 --
 ALTER TABLE `reporte`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `empleados`
+-- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `listado`
+-- AUTO_INCREMENT de la tabla `listado`
 --
 ALTER TABLE `listado`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `reporte`
+-- AUTO_INCREMENT de la tabla `prueba2`
+--
+ALTER TABLE `prueba2`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `prueba3`
+--
+ALTER TABLE `prueba3`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `prueba4`
+--
+ALTER TABLE `prueba4`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `prueba5`
+--
+ALTER TABLE `prueba5`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

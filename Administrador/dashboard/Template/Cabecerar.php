@@ -15,6 +15,7 @@ foreach($lisenpleado as $empleado) {
 }
 
 
+
 if(!isset($_SESSION['usuario'])){
   header("Location:../Login.php");
 }else
@@ -22,6 +23,8 @@ if($_SESSION['usuario']=="ok"){
   $nombreUsuario=$_SESSION["nombreUsuario"];
 }
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
