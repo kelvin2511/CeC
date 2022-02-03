@@ -88,12 +88,12 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                               </div>
                            </div>
                            <div class="d-flex align-items-center justify-content-between mt-3">
-                              
+
                            <form action="Listado.php" method="POST">
                               <input type="hidden" name="txtID" id="txtID" value="<?php echo $txtID; ?>"/>                                       
                               <button type="submit" name="Accion" value="Seleccionar" class="btn btn-danger btn-lg"><i class="ri-radio-button-fill"></i>Seleccionar Listado</button>
                            </form>   
-                           
+                        
                            </div>
                         </div>
                      </div>
@@ -261,7 +261,9 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                   <div class="iq-card">
                      <div class="iq-card-header d-flex justify-content-between align-items-center">
                         <div class="iq-header-title">
+
                            <h4 class="card-title">Registro de Listados </h4>  <?php echo $txtNombre ?>
+
                         </div>
                         <div id="top-rated-item-slick-arrow" class="slick-aerrow-block "></div>
                      </div>

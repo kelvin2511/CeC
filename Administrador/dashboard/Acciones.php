@@ -59,11 +59,13 @@ switch($Accion){
         $sentenciaSQL -> execute(); 
         $selecionado = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
 
+
         $txtNombre=$selecionado['nombre'];
 
       
        
         
+
 
     
         break;

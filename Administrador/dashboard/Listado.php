@@ -1,4 +1,5 @@
 <?php include 'Template/Cabecerar.php';?>
+<<<<<<< HEAD
 <?php include 'Modales.php';?> 
 <?php include 'Acciones.php';?>
 
@@ -15,6 +16,12 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
 
 
 
+=======
+
+
+<!-- Page Content  -->
+
+>>>>>>> 38fa94264d67ff8130b18b3d12cfaa2b766a963f
 <div id="content-page" class="content-page">
    <div class="container-fluid">
       <div class="row">
@@ -23,6 +30,7 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
             <div class="iq-card">
                <div class="iq-card-header d-flex justify-content-between">                        
                   <div class="iq-header-title">
+<<<<<<< HEAD
                      <h4 class="card-title">Listado de estudiantes <?php 
                   
                   if($txtNombre!=""){
@@ -35,6 +43,10 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                   
                   ?>  
                   </div> </h4>               
+=======
+                     <h4 class="card-title">Listado de estudiantes</h4> 
+                  </div>
+>>>>>>> 38fa94264d67ff8130b18b3d12cfaa2b766a963f
                   
                   <button class="btn btn-sm iq-bg-success" data-toggle="modal" data-target="#Nuevo-Usuario">
                      <span class="pl-1">Añadir nuevo</span>
@@ -60,6 +72,7 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                            </tr>
                         </thead>
                         <tbody>
+
                          <?php   foreach($listaestudiantes as $Estudiantes) { ?>
                               <tr>
                                  <td><?php echo $Estudiantes['ID']?></td>
@@ -78,8 +91,9 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                                     </div>
                                  </td>
                               </tr>
-                              </tr>
-                              <?php }  ?>  
+                           </tr>
+                           <?php }  ?>  
+
                         </tbody>
                      </table>
                   </div>
@@ -94,5 +108,9 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
 
 <!-- <td><span class="badge iq-bg-success">Active</span></td>
 <td><span class="badge iq-bg-primary">Block</span></td>
+<<<<<<< HEAD
 <td><span class="badge iq-bg-warning">Pending</span></td> -->
 
+=======
+<td><span class="badge iq-bg-warning">Pending</span></td> -->
+>>>>>>> 38fa94264d67ff8130b18b3d12cfaa2b766a963f
