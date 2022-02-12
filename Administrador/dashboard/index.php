@@ -4,7 +4,7 @@
 
 <?php 
 
-$sentenciaSQL = $conexion -> prepare("SELECT * FROM listado");
+$sentenciaSQL = $conexion -> prepare("SELECT * FROM listado ORDER BY ID desc ");
 $sentenciaSQL -> execute();
 $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
 
@@ -88,7 +88,12 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                               </div>
                            </div>
                            <div class="d-flex align-items-center justify-content-between mt-3">
-                           <button type="button" class="btn btn-primary btn-lg">Primary</button>
+                          
+                           <form action="Listado.php" method="POST">
+                              <input type="hidden" name="txtID" id="txtID" value="<?php echo $txtID; ?>"/>                                       
+                              <button type="submit" name="Accion" <?php echo ($Accion!="Seleccionar")?"disabled":""; ?> value="Seleccionar" class="btn btn-primary btn-lg">Incribir Estudiante</button>
+                           </form>  
+                                                  
                            </div>
                         </div>
                      </div>
@@ -256,7 +261,7 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                   <div class="iq-card">
                      <div class="iq-card-header d-flex justify-content-between align-items-center">
                         <div class="iq-header-title">
-                           <h4 class="card-title">Registro de Listados </h4>   
+                           <h4 class="card-title">Registro de Listados </h4>  
                         </div>
                         <div id="top-rated-item-slick-arrow" class="slick-aerrow-block "></div>
                      </div>
@@ -280,12 +285,13 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                                        <p class="mb-0 mt-2">Hora: <?php echo $lis['hora']?></p>
                                        <div class="d-flex align-items-center my-2 iq-ltr-direction">
 
-                                       <form action="Listado.php" method="POST">
+                                       <form method="POST">
                                        <input type="hidden" name="txtID" id="txtID" value="<?php echo $lis['ID'];?>"/>                                       
-                                        <button type="submit" name="Accion" value="Seleccionar" class="btn btn-danger btn-lg"><i class="ri-radio-button-fill"></i>Seleccionar Listado</button>
+                                        <button type="submit" name="Accion" value="Seleccionar" class="btn  btn-primary btn-lg "><i class="las la-clipboard-check"></i>Seleccionar Lista</button>
 
-                                       </form>                                       
-                                       </div>
+                                       </form>  
+                                                                            
+                                       </div>                                    
                                     </div>
                                  </div>
                               </div>
@@ -304,3 +310,4 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                    
    <!-- Wrapper END -->
    <?php include 'Template/Pie.php';?> 
+

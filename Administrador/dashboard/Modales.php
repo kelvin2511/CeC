@@ -1,4 +1,12 @@
- <!-- Modal de crear listas -->
+
+<?php 
+
+$sentenciaSQL = $conexion -> prepare("SELECT * FROM empleados ");
+$sentenciaSQL -> execute();
+$lisesmpleado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
+
+?>
+<!-- Modal de crear listas -->
  <div class="modal fade" id="Crear-Listado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -89,54 +97,4 @@
     </div>
 </div>
 <!-- Fin Modal de crear reportes-->
-
-<!--Modal para agregar estudiantes-->                                                   
-<div class="modal fade bd-example-modal-lg" id="Nuevo-Usuario" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Pelicula</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form  method="POST">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Titulo:</label>
-                        <input type="text" class="form-control" name="txtTitulo" id="txtTitulo" >
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Descripcion:</label>
-                        <textarea class="form-control" name="txtDescripcion" id="txtDescripcion"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Genero:</label>
-                        <input type="text" class="form-control" name="txtGenero" id="txtGenero" >
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Duracion:</label>
-                        <input type="text" class="form-control" name="txtDuracion" id="txtDuracion" >
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Enlace de Mega:</label>
-                        <input type="text" class="form-control" name="txtEnlace" id="txtEnlace" >
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Imagen de Portada:</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="txtImagen" id="txtImagen">
-                            <label class="custom-file-label" for="customFile">Seleciona una imagen</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" name="Accion" data-dismiss="modal">Close</button>
-                    <button type="submit" name="Accion" value="Agregar"class="btn  btn-primary">Guardar</button>                                       
-                </div>
-            </form>
-        </div>
-    </div>
-</div> 
-<!-- Final Modal para agregar estudiantes-->
 

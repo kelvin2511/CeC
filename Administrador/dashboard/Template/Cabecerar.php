@@ -72,7 +72,7 @@ if($_SESSION['usuario']=="ok"){
          <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                <ul id="iq-sidebar-toggle" class="iq-menu">
-                  <li><a href="../../../CeC/index.html" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Ver sitio web</span></a></li>
+                  <li><a href="../../index.html" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Ver sitio web</span></a></li>
                   <li class="active active-menu"><a href="index.php" class="iq-waves-effect"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a></li>                  
                   
                   <li>
@@ -83,6 +83,7 @@ if($_SESSION['usuario']=="ok"){
                          
                         </li>
                         <li><a href="Listado.php" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Lista de Reportes</span></a></li>
+                        <li><a href="ListadoUsuarios.php" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Lista de Usuarios</span></a></li>
                         
                        
                      </ul>

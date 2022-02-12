@@ -1,5 +1,7 @@
-<?php
 
+
+<?php
+ 
   // Receptor de fecha actual 
   $fechaActual = date('d-m-Y');
    
@@ -17,7 +19,16 @@ $Accion=(isset($_POST['Accion']))?$_POST['Accion']:"";
 
 
 // Receptor de estudiantes inscritos
-
+$txtMatricula=(isset($_POST['txtMatricula']))?$_POST['txtMatricula']:"";
+$txtFecha=(isset($_POST['txtFecha']))?$_POST['txtFecha']:"";
+$txtHora=(isset($_POST['txtHora']))?$_POST['txtHora']:"";
+$txtEstudiante=(isset($_POST['txtEstudiante']))?$_POST['txtEstudiante']:"";
+$txtComunicacion=(isset($_POST['txtComunicacion']))?$_POST['txtComunicacion']:"";
+$txtSituacion=(isset($_POST['txtSituacion']))?$_POST['txtSituacion']:"";
+$txtSolucion=(isset($_POST['txtSolucion']))?$_POST['txtSolucion']:"";
+$txtEstatus=(isset($_POST['txtEstatus']))?$_POST['txtEstatus']:"";
+$txtAtendido=(isset($_POST['txtAtendido']))?$_POST['txtAtendido']:"";
+$txtSeleccion=(isset($_POST['txtSeleccion']))?$_POST['txtSeleccion']:"";
 
 
 // Acciones del listado
@@ -31,7 +42,8 @@ switch($Accion){
         $sentenciaSQL-> execute();   
 
         $sentenciaSQL = $conexion -> prepare(" CREATE TABLE $txtNombre(
-             ID int(255) PRIMARY KEY,
+             ID int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+             matricula VARCHAR(255),
              fecha VARCHAR(255),
              hora VARCHAR(255),
              nombre VARCHAR(255),
@@ -61,11 +73,29 @@ switch($Accion){
 
 
         
-        $NombreSeleccionado=$selecionado['nombre'];
+        $txtNombre=$selecionado['nombre'];
         $FechaSeleccionado=$selecionado['fecha'];
         $HoraSeleccionado=$selecionado['hora'];
 
     
+        break;
+
+        case"Agregar";
+        $sentenciaSQL = $conexion -> prepare("INSERT INTO  $txtSeleccion (matricula,fecha,hora,nombre,comunicacion,situacion,solucion,estatus,atendido ) VALUES (:matricula, :fecha, :hora, :nombre, :comunicacion, :situacion, :solucion, :estatus, :atendido);");
+        $sentenciaSQL->bindParam(':matricula', $txtMatricula);
+        $sentenciaSQL->bindParam(':fecha', $txtFecha);
+        $sentenciaSQL->bindParam(':hora', $txtHora);
+        $sentenciaSQL->bindParam(':nombre', $txtEstudiante);
+        $sentenciaSQL->bindParam(':comunicacion', $txtComunicacion);
+        $sentenciaSQL->bindParam(':situacion', $txtSituacion);
+        $sentenciaSQL->bindParam(':solucion', $txtSolucion);
+        $sentenciaSQL->bindParam(':estatus', $txtEstatus);
+        $sentenciaSQL->bindParam(':atendido', $txtAtendido);
+        $sentenciaSQL-> execute();  
+
+        
+        
+         header('Location: ');
         break;
 
 
