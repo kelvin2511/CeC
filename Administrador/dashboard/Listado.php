@@ -1,8 +1,16 @@
 <?php include 'Template/Cabecerar.php';?> 
 <?php include 'Modales.php';?> 
 <?php include 'Acciones.php';?>
-<!-- Page Content  -->
+<?php 
 
+$sentenciaSQL = $conexion -> prepare("SELECT * FROM  prueba ");
+$sentenciaSQL -> execute(); 
+$listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
+
+
+
+?>
+<!-- Page Content  -->
 <div id="content-page" class="content-page">
    <div class="container-fluid">
       <div class="row">
@@ -11,21 +19,24 @@
             <div class="iq-card">
                <div class="iq-card-header d-flex justify-content-between">                        
                   <div class="iq-header-title">
-                     <h4 class="card-title">Listado de estudiantes</h4> <?php 
+
+
+                     <h4 class="card-title">Listado de estudiantes <?php 
                   
                   if($txtNombre!=""){
                      echo $txtNombre;
-
-                     $sentenciaSQL = $conexion -> prepare("SELECT * FROM $txtNombre ");
-                     $sentenciaSQL -> execute();
-                     $liscategoria = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                      
                    }else{
 
                      echo "No hay nada seleccionado";
                    }      
                   
-                  ?> 
+                  ?>  
+                  </div> </h4>               
+
+                   
+
+    
                   </div>
                   <div>
 
@@ -58,25 +69,27 @@
                            </tr>
                         </thead>
                         <tbody>
-                          
-                        <?php if($txtNombre!=""){ foreach($liscategoria as $categoria) { ?>
-                           <tr>                                      
-                              <td><?php echo $categoria['matricula']?></td>
-                              <td><?php echo $categoria['fecha']?></td>
-                              <td><?php echo $categoria['hora']?></td>
-                              <td><?php echo $categoria['nombre']?></td>                              
-                              <td><?php echo $categoria['situacion']?></td>                                                               
-                              <td><?php  echo $categoria['solucion']?></td>
-                              <td><span class="badge iq-bg-success"><?php echo $categoria['estatus']?></span></td> 
-                              <td><?php  echo $categoria['atendido']?></td>
-                              <td>
-                                 <div class="flex align-items-center list-user-action">
-                                    <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>   
-                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver" href="#"><i class="las la-eye"></i></a>   
-                                 </div>
-                              </td>
+                         <?php   foreach($listaestudiantes as $Estudiantes) { ?>
+                              <tr>
+                                 <td><?php echo $Estudiantes['ID']?></td>
+                                 <td><?php echo $Estudiantes['fecha']?></td>
+                                 <td><?php echo $Estudiantes['hora']?></td>
+                                 <td><?php echo $Estudiantes['nombre']?></td>
+                                 <td><?php echo $Estudiantes['comunicacion']?></td> 
+                                 <td><?php echo $Estudiantes['situacion']?></td>                                                               
+                                 <td><?php echo $Estudiantes['solucion']?></td>
+                                 <td><span class="badge iq-bg-success"><?php echo $Estudiantes['estatus']?></span></td> 
+                                 <td><?php echo $Estudiantes['atendido']?></td>
+                                 <td>
+                                    <div class="flex align-items-center list-user-action">
+                                       <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
+                                       
+                                    </div>
+                                 </td>
+                              </tr>
                            </tr>
-                           <?php }  } else{}?>        
+                           <?php }  ?>  
+
                         </tbody>
                      </table>
                   </div>
@@ -188,4 +201,5 @@
 
 <!-- <td><span class="badge iq-bg-success">Active</span></td>
 <td><span class="badge iq-bg-primary">Block</span></td>
-<td><span class="badge iq-bg-warning">Pending</span></td> -->
+<td><span class="badge iq-bg-warning">Pending</span></td>  -->
+

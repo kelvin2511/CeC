@@ -87,13 +87,13 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                                  <i class="lar la-user"></i>
                               </div>
                            </div>
-                           <div class="d-flex align-items-center justify-content-between mt-3">
-                          
+                           <div class="d-flex align-items-center justify-content-between mt-3">                       
                            <form action="Listado.php" method="POST">
                               <input type="hidden" name="txtID" id="txtID" value="<?php echo $txtID; ?>"/>                                       
                               <button type="submit" name="Accion" <?php echo ($Accion!="Seleccionar")?"disabled":""; ?> value="Seleccionar" class="btn btn-primary btn-lg">Incribir Estudiante</button>
                            </form>  
                                                   
+
                            </div>
                         </div>
                      </div>
@@ -285,8 +285,9 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                                        <p class="mb-0 mt-2">Hora: <?php echo $lis['hora']?></p>
                                        <div class="d-flex align-items-center my-2 iq-ltr-direction">
 
-                                       <form method="POST">
-                                       <input type="hidden" name="txtID" id="txtID" value="<?php echo $lis['ID'];?>"/>                                       
+
+                                       <form  method="POST">
+                                        <input type="hidden" name="txtID" id="txtID" value="<?php echo $lis['ID'];?>"/>                                       
                                         <button type="submit" name="Accion" value="Seleccionar" class="btn  btn-primary btn-lg "><i class="las la-clipboard-check"></i>Seleccionar Lista</button>
 
                                        </form>  
