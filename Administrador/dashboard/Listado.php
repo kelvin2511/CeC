@@ -1,16 +1,8 @@
 <?php include 'Template/Cabecerar.php';?> 
 <?php include 'Modales.php';?> 
 <?php include 'Acciones.php';?>
-<?php 
-
-$sentenciaSQL = $conexion -> prepare("SELECT * FROM  prueba ");
-$sentenciaSQL -> execute(); 
-$listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
-
-
-
-?>
 <!-- Page Content  -->
+
 <div id="content-page" class="content-page">
    <div class="container-fluid">
       <div class="row">
@@ -19,38 +11,28 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
             <div class="iq-card">
                <div class="iq-card-header d-flex justify-content-between">                        
                   <div class="iq-header-title">
-
-
-                     <h4 class="card-title">Listado de estudiantes <?php 
+                     <h4 class="card-title">Listado de estudiantes</h4> <?php 
                   
                   if($txtNombre!=""){
                      echo $txtNombre;
+
+                     $sentenciaSQL = $conexion -> prepare("SELECT * FROM $txtNombre ");
+                     $sentenciaSQL -> execute();
+                     $liscategoria = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                      
                    }else{
 
                      echo "No hay nada seleccionado";
                    }      
                   
-                  ?>  
-                  </div> </h4>               
-
-                   
-
-    
+                  ?> 
                   </div>
-                  <div>
-
+                  
                   <button class="btn btn-sm iq-bg-success" data-toggle="modal" data-target="#Nuevo-Usuario">
-                     <span class="pl-1">Nuevo Registro</span>
-                  </button>                  
-                                  
-                  </div>
-              
-                  
-           
-                
-
-                  
+                     <span class="pl-1">Añadir nuevo</span>
+                  </button>
+                 
+                       
                </div>
                <div class="iq-card-body">
                   <div class="table-view">
@@ -60,7 +42,8 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                               <th >Matricula</th>
                               <th >Fecha</th>
                               <th >Hora</th>
-                              <th >Nombre</th>                              
+                              <th >Nombre</th>
+                              <th >Via de Comunicacion</th>
                               <th >Situacion</th>
                               <th >Solucion</th>
                               <th >Estatus</th>
@@ -69,27 +52,26 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                            </tr>
                         </thead>
                         <tbody>
-                         <?php   foreach($listaestudiantes as $Estudiantes) { ?>
-                              <tr>
-                                 <td><?php echo $Estudiantes['ID']?></td>
-                                 <td><?php echo $Estudiantes['fecha']?></td>
-                                 <td><?php echo $Estudiantes['hora']?></td>
-                                 <td><?php echo $Estudiantes['nombre']?></td>
-                                 <td><?php echo $Estudiantes['comunicacion']?></td> 
-                                 <td><?php echo $Estudiantes['situacion']?></td>                                                               
-                                 <td><?php echo $Estudiantes['solucion']?></td>
-                                 <td><span class="badge iq-bg-success"><?php echo $Estudiantes['estatus']?></span></td> 
-                                 <td><?php echo $Estudiantes['atendido']?></td>
-                                 <td>
-                                    <div class="flex align-items-center list-user-action">
-                                       <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                       
-                                    </div>
-                                 </td>
-                              </tr>
+                          
+                        <?php if($txtNombre!=""){ foreach($liscategoria as $categoria) { ?>
+                           <tr>                                      
+                              <td><?php echo $categoria['matricula']?></td>
+                              <td><?php echo $categoria['fecha']?></td>
+                              <td><?php echo $categoria['hora']?></td>
+                              <td><?php echo $categoria['nombre']?></td>
+                              <td><?php  echo $categoria['comunicacion']?></td> 
+                              <td><?php echo $categoria['situacion']?></td>                                                               
+                              <td><?php  echo $categoria['solucion']?></td>
+                              <td><span class="badge iq-bg-success"><?php echo $categoria['estatus']?></span></td> 
+                              <td><?php  echo $categoria['atendido']?></td>
+                              <td>
+                                 <div class="flex align-items-center list-user-action">
+                                    <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>   
+                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver" href="#"><i class="las la-eye"></i></a>   
+                                 </div>
+                              </td>
                            </tr>
-                           <?php }  ?>  
-
+                           <?php }  } else{}?>        
                         </tbody>
                      </table>
                   </div>
@@ -144,7 +126,7 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Situacion:</label>
                         <!-- <input type="text" class="form-control"  > -->
-                        <select name="txtSituacion" id="txtSituacion" class="form-control mb-3">
+                        <select name="txtSituacion" id="txtSituacion" class="form-control mb-3" <?php echo $txtID ?> >
                             <option selected="">Elija una opcion</option>
                             <option value="Seleccion de materia">Seleccion de materia</option>
                             <option value="Ayuda con la plataforma">Ayuda con la plataforma</option>
@@ -189,7 +171,7 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" name="Accion" data-dismiss="modal">Close</button>
-                    <button type="submit" name="Accion" value="Agregar"class="btn  btn-primary">Guardar</button>                                       
+                    <button type="submit" name="Accion" value="Agregar" class="btn  btn-primary">Guardar</button>                                       
                 </div>
             </form>
         </div>
@@ -201,5 +183,4 @@ $listaestudiantes = $sentenciaSQL -> fetch(PDO::FETCH_LAZY);
 
 <!-- <td><span class="badge iq-bg-success">Active</span></td>
 <td><span class="badge iq-bg-primary">Block</span></td>
-<td><span class="badge iq-bg-warning">Pending</span></td>  -->
-
+<td><span class="badge iq-bg-warning">Pending</span></td> -->

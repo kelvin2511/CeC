@@ -59,7 +59,7 @@ switch($Accion){
         break;
   
      
-       // header("Location:Documentos.php");
+       // 
 
         break;
 
@@ -88,11 +88,11 @@ switch($Accion){
         $sentenciaSQL->bindParam(':solucion', $txtSolucion);
         $sentenciaSQL->bindParam(':estatus', $txtEstatus);
         $sentenciaSQL->bindParam(':atendido', $txtAtendido);
-        $sentenciaSQL-> execute();  
+        $sentenciaSQL-> execute();        
 
         
         
-         header('Location: ');
+       
         break;
 
 

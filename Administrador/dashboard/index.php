@@ -286,7 +286,7 @@ $listado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
                                        <div class="d-flex align-items-center my-2 iq-ltr-direction">
 
 
-                                       <form  method="POST">
+                                       <form action="Listado.php"  method="POST">
                                         <input type="hidden" name="txtID" id="txtID" value="<?php echo $lis['ID'];?>"/>                                       
                                         <button type="submit" name="Accion" value="Seleccionar" class="btn  btn-primary btn-lg "><i class="las la-clipboard-check"></i>Seleccionar Lista</button>
 

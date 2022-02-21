@@ -10,9 +10,9 @@ foreach($lisempleado as $empleado) {
   $usuario=$empleado['user'];
   $contra=$empleado['contra'];
   $nombre=$empleado['nombre'];
-}
-
-if($_POST){
+  
+  
+  if($_POST){
     if(($_POST['usuario']==$usuario) && ($_POST['contraceña']==$contra)){
         $_SESSION['usuario']="ok";
         $_SESSION['nombreUsuario']=$usuario;
@@ -25,6 +25,9 @@ if($_POST){
         $mensaje="Error usted no ingreso los datos correctamente o ya no forma parte de los centros de computo por favor contactar a su supervisor";
     }
 } 
+}
+
+
 
 ?>
 
